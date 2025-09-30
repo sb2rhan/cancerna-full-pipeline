@@ -1,0 +1,35 @@
+{
+  "models": {
+    "stage1": {
+      "model_path": "/Users/yeldar/Downloads/resnet_50_23dataset.pth",
+      "description": "Stage 1: Cancer Classification (ResNet50)"
+    },
+      "stage2": {
+        "model_path": "/Users/yeldar/Downloads/LungRADS/best_model.pt",
+        "encoders_and_scalers_path": "/Users/yeldar/Downloads/LungRADS/encoders_and_scalers.pkl",
+        "label_classes_path": "/Users/yeldar/Downloads/LungRADS/label_classes.pkl",
+        "description": "Stage 2: LungRADS Classification"
+      },
+    "stage3": {
+      "model_path": "/Users/yeldar/Downloads/improved_faunet_best_model.pt",
+      "description": "Stage 3: Cancer Segmentation (FAUNet)"
+    }
+  },
+  "data": {
+    "input_ct_scan": "/Users/yeldar/Downloads/CT_CTGOUC_TMP400385_4.nii",
+    "output_directory": "/Users/yeldar/Downloads/LungRADS/results",
+    "description": "Input and output paths"
+  },
+  "patient_info": {
+    "age": 65.0,
+    "gender": 1.0,
+    "smoking_status": 0.0,
+    "description": "Patient information for LungRADS classification (age, gender: 1=male/0=female, smoking: 1=smoker/0=non-smoker)"
+  },
+  "settings": {
+    "device": "auto",
+    "segmentation_threshold": 0.5,
+    "verbose": true,
+    "description": "Pipeline settings"
+  }
+}
