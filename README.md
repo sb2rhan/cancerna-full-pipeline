@@ -35,11 +35,7 @@ Results: Coordinates, Diameter, Segmentation Mask
 
 ## Installation
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd ct_scan_classifier_project
-```
+1. Clone the repository.
 
 2. Install dependencies:
 ```bash
@@ -186,6 +182,11 @@ Create a `pipeline_config.json` file for custom configuration:
 }
 ```
 
+Then, run the pipeline with this config:
+```bash
+   python run_with_config.py --config pipeline_config.json
+```
+
 ## Examples
 
 ### Example 1: Basic Usage
@@ -329,30 +330,9 @@ python lung_nodule_detection_pipeline.py \
     --verbose
 ```
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Citation
-
-If you use this system in your research, please cite:
-
-```bibtex
-@software{lung_nodule_detection_3stage,
-  title={3-Stage Lung Nodule Detection Pipeline},
-  author={Your Name},
-  year={2024},
-  url={https://github.com/your-repo/lung-nodule-detection}
-}
-```
 
 ## Acknowledgments
 

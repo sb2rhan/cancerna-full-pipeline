@@ -32,11 +32,11 @@ from monai.transforms import (
 
 def generate_classification_train_transform(image_key,label_key,img_patch_size):
 
-    '''
+    """
     image_key: "image"
     img_patch_size : patch size as numpy (64,64,64) [z,y,x]
 
-    '''
+    """
     train_transforms = Compose(
     [
         LoadImaged(image_key),

@@ -33,8 +33,6 @@ class LungRADSClassifier:
                  encoders_and_scalers_path: Optional[str] = None,
                  device: str = 'auto'):
         """
-        Initialize LungRADS classifier
-        
         Args:
             model_path: Path to trained model (optional)
             encoder_path: Path to encoder pickle file (optional)
@@ -56,12 +54,12 @@ class LungRADSClassifier:
         
         # Default LungRADS class mapping (will be overridden if label_classes_path provided)
         self.lungrads_labels = {
-            0: "1",    # Benign
-            1: "2",    # Probably benign
-            2: "3",    # Probably malignant
-            3: "4A",   # Suspicious
-            4: "4B",   # Suspicious
-            5: "4X"    # Suspicious with additional features
+            0: "1",
+            1: "2",
+            2: "3",
+            3: "4A",
+            4: "4B",
+            5: "4X"
         }
         
         self._load_components()
@@ -430,7 +428,7 @@ class LungRADSClassifier:
         ct_array = self._resize_3d(ct_array, target_size)
         
         return ct_array, spacing
-    
+
     def _normalize_ct(self, ct_array: np.ndarray) -> np.ndarray:
         """Normalize CT array to [0, 1] range"""
         # Clip to reasonable HU range
@@ -438,19 +436,19 @@ class LungRADSClassifier:
         # Normalize to [0, 1]
         ct_array = (ct_array - ct_array.min()) / (ct_array.max() - ct_array.min())
         return ct_array.astype(np.float32)
-    
+
     def _resize_3d(self, array: np.ndarray, target_size: Tuple[int, int, int]) -> np.ndarray:
         """Resize 3D array to target size"""
         from scipy.ndimage import zoom
-        
+
         zoom_factors = [
             target_size[0] / array.shape[0],
             target_size[1] / array.shape[1],
             target_size[2] / array.shape[2]
         ]
-        
+
         return zoom(array, zoom_factors, order=1)
-    
+
     def get_class_probabilities(self, ct_file_path: str, tabular_features: Optional[np.ndarray] = None) -> Dict[str, float]:
         """
         Get probability distribution over all LungRADS classes

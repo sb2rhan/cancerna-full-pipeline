@@ -27,15 +27,15 @@ def main():
         description="Run 3-Stage Lung Nodule Detection Pipeline with Configuration",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
-Examples:
-  # Run with configuration file
-  python run_with_config.py --config config.json
-  
-  # Validate configuration without running
-  python run_with_config.py --config config.json --validate-only
-  
-  # Create sample configuration
-  python run_with_config.py --create-sample-config
+            Examples:
+              # Run with configuration file
+              python run_with_config.py --config config.json
+              
+              # Validate configuration without running
+              python run_with_config.py --config config.json --validate-only
+              
+              # Create sample configuration
+              python run_with_config.py --create-sample-config
         """
     )
     

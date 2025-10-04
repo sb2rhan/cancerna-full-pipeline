@@ -1,23 +1,23 @@
 {
   "models": {
     "stage1": {
-      "model_path": "/Users/yeldar/Downloads/resnet_50_23dataset.pth",
+      "model_path": "/../resnet_50_23dataset.pth",
       "description": "Stage 1: Cancer Classification (ResNet50)"
     },
       "stage2": {
-        "model_path": "/Users/yeldar/Downloads/LungRADS/best_model.pt",
-        "encoders_and_scalers_path": "/Users/yeldar/Downloads/LungRADS/encoders_and_scalers.pkl",
-        "label_classes_path": "/Users/yeldar/Downloads/LungRADS/label_classes.pkl",
+        "model_path": "/../best_model.pt",
+        "encoders_and_scalers_path": "/../encoders_and_scalers.pkl",
+        "label_classes_path": "/../label_classes.pkl",
         "description": "Stage 2: LungRADS Classification"
       },
     "stage3": {
-      "model_path": "/Users/yeldar/Downloads/improved_faunet_best_model.pt",
+      "model_path": "/../improved_faunet_best_model.pt",
       "description": "Stage 3: Cancer Segmentation (FAUNet)"
     }
   },
   "data": {
-    "input_ct_scan": "/Users/yeldar/Downloads/CT_CTGOUC_TMP400385_4.nii",
-    "output_directory": "/Users/yeldar/Downloads/LungRADS/results",
+    "input_ct_scan": "/../CT_CTGOUC_TMP400385_4.nii",
+    "output_directory": "/../results",
     "description": "Input and output paths"
   },
   "patient_info": {

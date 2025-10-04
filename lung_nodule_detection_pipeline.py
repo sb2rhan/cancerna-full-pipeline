@@ -17,24 +17,20 @@ import sys
 import json
 import numpy as np
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional, Union
 import warnings
 warnings.filterwarnings('ignore')
-
-# Add current directory to path for imports
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
 from classification_models import get_classification_model
 from generate_transforms import generate_classification_test_transform
 from lungrads_classifier import LungRADSClassifier
 from cancer_segmentation import CancerSegmentation
 from config_loader import ConfigLoader
 import SimpleITK as sitk
-import matplotlib.pyplot as plt
 import pandas as pd
+
+# Add current directory to path for imports
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 
 class Stage1CancerClassifier:
